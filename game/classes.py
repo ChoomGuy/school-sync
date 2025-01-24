@@ -2,7 +2,8 @@ import random
 
 class plot:
     def __init__(self, crops):
-        self.crops = crops.name
+        self.cropName = crops.name
+        self.growthStage = crops.growthStage
         self.obstructed = True
     
     def checkUnlock(self):
@@ -11,26 +12,34 @@ class plot:
         else:
             return True
 
-    def harvest(self):
+    def harvest(self, player):
         if not self.checkUnlock():
             print("You can't access this plot")
         else:    
             if self.crops == "None":
                 print("There are no crops to harvest")
             else:
-                print(f'You obtained {random.randint(8,14)} {self.crops}s')
-                self.crops = "None"
+                cropYield = random.randint(8,12)
+                print(f'You obtained {cropYield} {self.cropName}s!')
+                player.inventory[self.cropName] += cropYield
+                self.cropName = "None"
 
     def unlockPlot(self, player):
         self.obstructed = False
         player.ownedPlots.append(self)
 
-    def plant(self, crops):
+    def plant(self, crops: classmethod, player:classmethod):
         if not self.checkUnlock:
             print("You can't access this plot")
         else:
-            self.crops = crops
+            if player.seeds[crops] >= 1:
+                player.seeds[crops] -= 1
+                self.crops = crops
+            else:
+                print("You don't have enough seeds! ")
 
+    def checkCropType(self):
+        return self.crops.name
 
 class player:
     def __init__(self):
@@ -40,7 +49,13 @@ class player:
                     "Carrot": 0,
                     "Pumpkin":0,
                     "Garlic":0,
-                    "Kale":0} 
+                    "Kale":0}
+        self.inventory = {"Wheat":0,
+        "Potato": 0,
+        "Carrot": 0,
+        "Pumpkin": 0,
+        "Garlic": 0,
+        "Kale":0} 
         self.ownedPlots = [plotDict["plot0"]]
 
     def buyPlot(self,choice):
@@ -49,12 +64,14 @@ class player:
             print(f"You bought plot {choice}!")
             choice = f'plot{choice}'            
             plotDict[choice].unlockPlot(self)
+        else:
+            print("You're too broke! ")
 
 
 class crop:
     def __init__(self,name):
         self.name = name
-        self.growth = random.randint(1,10)
+        self.growthStage = 0
         self.rot = 0
 
     def rotDevelopment(self):
@@ -62,6 +79,10 @@ class crop:
             self.rot += 10
         elif abs(random.randint(1,20)-random.randint(1,20)) == 1: # 9.5%
             self.rot += 1
+
+    def growthCheck(self):
+        if random.randint(1,len(self.name)) == random.randint(1,len(self.name)):
+            self.growthStage += 1
 
 
 class market:
