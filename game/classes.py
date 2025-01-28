@@ -4,6 +4,7 @@ class plot:
     def __init__(self, crops):
         self.cropName = crops.name
         self.growthStage = crops.growthStage
+        self.rotStage = crops.rot
         self.obstructed = True
     
     def checkUnlock(self):
@@ -19,10 +20,14 @@ class plot:
             if self.crops == "None":
                 print("There are no crops to harvest")
             else:
-                cropYield = random.randint(8,12)
-                print(f'You obtained {cropYield} {self.cropName}s!')
-                player.inventory[self.cropName] += cropYield
-                self.cropName = "None"
+                if not checkRot():
+                    cropYield = random.randint(8,12)
+                    print(f'You obtained {cropYield} {self.cropName}s!')
+                    player.inventory[self.cropName] += cropYield
+                    self.cropName = "None"
+                else:
+                    print("Unluckily, your crops have rotted away due to some unknown cause!")
+                    self.cropName = "None"
 
     def unlockPlot(self, player):
         self.obstructed = False
@@ -41,6 +46,11 @@ class plot:
     def checkCropType(self):
         return self.crops.name
 
+    def checkRot(self):
+        if self.rotStage >= 10:
+            return True
+        return False
+
 class player:
     def __init__(self):
         self.balance = 0
@@ -56,7 +66,7 @@ class player:
         "Pumpkin": 0,
         "Garlic": 0,
         "Kale":0} 
-        self.ownedPlots = [plotDict["plot0"]]
+        self.ownedPlots = []
 
     def buyPlot(self,choice):
         if self.balance - 10 > 0:
@@ -108,17 +118,27 @@ class market:
             print(f"You sold {cropAmount} {crop}s for {int(self.prices[crop] * 1.45 * cropAmount)} coins!")
         else:
             print("You can't sell nothing!")
-        
-    
-        
-    
-    
-    
-        
-plotDict = {"plot0": plot(),
-    "plot1": plot(),
-    "plot2":plot(),
-    "plot3":plot(),
-    "plot4":plot(),
-    "plot5":plot()}
 
+    def buyFrom(self, player:classmethod):
+        output = "There is "
+        for i in self.inventory:
+            if self.inventory[i] > 0:
+                output += f'{self.inventory[i]} {i}, '
+        print(f'{output[:-2]}.')
+        purchase = input("Enter what crop you want to buy: \n")
+        purchaseAmount = int(input("Enter how many crops you want to buy"))
+        if purchaseAmount * self.prices[purchase] >= player.balance:
+            print(f"You bought {purchaseAmount} {purchase}")
+            player.balance -= purchaseAmount * self.prices[purchase]
+            player.seeds[purchase] += purchaseAmount
+        else:
+            print("You can't afford this!")
+        
+    
+        
+    
+    
+a = player()
+b = market("B",10,3)
+b.buyFrom(a)
+        
