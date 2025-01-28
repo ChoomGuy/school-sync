@@ -138,7 +138,5 @@ class market:
         
     
     
-a = player()
-b = market("B",10,3)
-b.buyFrom(a)
+
         
