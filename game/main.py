@@ -41,6 +41,7 @@ def tutorial():
         print("Now let's harvest it! Type \'HARVEST Barn\' to harvest it")
         response = input()
     you.ownedPlots["Barn"].harvest(you)
+    print("Not bad!")
        
 
 def main():
