@@ -28,14 +28,16 @@ class plot:
                         cropYield = random.randint(8,12)
                         print('-'*30)
                         print(f'You obtained {cropYield} {self.cropName.lower()}{'' if self.cropName in {"Garlic","Wheat","Kale"} else 's'}!')
-                        print(f'You also obtained {int(cropYield*1.4)} {self.cropName} seeds!')
+                        print(f'You also obtained {int(cropYield*1.4)} {self.cropName.lower()} seeds!')
                         print('-'*30)
                         player.inventory[self.cropName] += cropYield
                         player.seeds[self.cropName] += int(cropYield * 1.4)
                         self.cropName = "None"
+                        self.growthStage = 0
                     else:
                         print("Unluckily, your crops have rotted away due to some unknown cause!")
                         self.cropName = "None"
+                        self.growthStage = 0
 
     def unlockPlot(self, player):
         self.obstructed = False
