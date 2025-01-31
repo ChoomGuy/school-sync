@@ -16,10 +16,14 @@ class plot:
 
     def harvest(self, player):
         if not self.checkUnlock():
+            print("-"*30)
             print("You can't access this plot")
+            print("-"*30)
         else:    
             if self.cropName == "None":
+                print("-"*30)
                 print("There are no crops to harvest")
+                print("-"*30)
             else:
                 if self.growthStage < self.growthCap:
                     print(f'The {self.cropName} is not ready to harvest!')
@@ -45,16 +49,22 @@ class plot:
 
     def plant(self, crops: classmethod, player:classmethod):
         if not self.checkUnlock:
+            print("-"*30)
             print("You can't access this plot")
+            print("-"*30)
         else:
             if self.cropName == "None":
                 if player.seeds[crops] >= 1:
                     player.seeds[crops] -= 1
                     self.crops = crops.name
                 else:
+                    print("-"*30)
                     print("You don't have enough seeds! ")
+                    print("-"*30)
             else:
+                print("-"*30)
                 print("You can't plant on an already planted plot! ")
+                print("-"*30)
 
     def checkCropType(self):
         return self.cropName
@@ -69,6 +79,7 @@ class plot:
 
 class player:
     def __init__(self):
+        self.location = "Barn"
         self.balance = 0
         self.seeds = {"Wheat":0,
                     "Potato": 0,
