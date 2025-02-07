@@ -47,7 +47,7 @@ class plot:
         self.obstructed = False
         player.ownedPlots.append(self)
 
-    def plant(self, crops: classmethod, player:classmethod):
+    def plant(self, player:classmethod, crops: classmethod):
         if not self.checkUnlock:
             print("-"*30)
             print("You can't access this plot")
