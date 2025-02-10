@@ -2,10 +2,11 @@ import random
 
 class plot:
     def __init__(self, crops):
-        self.growthCap = crops.growthCap
-        self.cropName = crops.name
-        self.growthStage = crops.growthStage
-        self.rotStage = crops.rot
+        self.crop = crops # classmethod
+        self.growthCap = crops.growthCap # int
+        self.cropName = crops.name # str
+        self.growthStage = crops.growthStage # int
+        self.rotStage = crops.rot # int
         self.obstructed = True
     
     def checkUnlock(self):
@@ -54,8 +55,8 @@ class plot:
             print("-"*30)
         else:
             if self.cropName == "None":
-                if player.seeds[crops] >= 1:
-                    player.seeds[crops] -= 1
+                if player.seeds[crops.name] >= 1:
+                    player.seeds[crops.name] -= 1
                     self.crops = crops.name
                 else:
                     print("-"*30)
@@ -65,6 +66,12 @@ class plot:
                 print("-"*30)
                 print("You can't plant on an already planted plot! ")
                 print("-"*30)
+
+    def cropGrowth(self):
+        self.growthStage += self.crop.growthCheck()
+
+    def cropRot(self):
+        self.rotStage += self.crop.rotDevelopment()
 
     def checkCropType(self):
         return self.cropName
@@ -122,7 +129,7 @@ class crop:
 
     def growthCheck(self):
         if random.randint(1,len(self.name)) == random.randint(1,len(self.name)):
-            self.growthStage += 1
+            self.growthStage += random.randint(1,2)
 
 
 class market:

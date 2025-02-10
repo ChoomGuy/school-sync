@@ -11,9 +11,21 @@ options = ['HARVEST','PLANT','CHECK','BUY','SELL','GOTO','BALANCE','HELP','PASS'
 # 6 balance
 # 7 pass 
 
-markets = ["supermarket","sketchymarket"]
+
+
 superMarket = cl.market("Farm-mart",20,8)
 sketchyMarket = cl.market("Discounted Goods",30,1)
+
+markets = {"supermarket": superMarket,
+"sketchyMarket": sketchyMarket}
+
+def checkCrops():
+    for each in you.ownedPlots:
+        for i in range(20):
+            you.ownedPlots[each].cropGrowth()
+        for i in range(5):
+            you.ownedPlots[each].cropRot()
+        
 
 def faq(): 
     print("Type HELP to open this menu\n")
@@ -48,9 +60,10 @@ def tutorial():
         response = input()
     checkPlot("Barn")
     print("Now let's go to the barn! Type \' GOTO Barn \' to go there")
-    while response.strip() != "GOTO Barn":
-        response = input()
+    response = input()
+    while response.lower().strip() != "goto barn":
         print("Now let's go to the barn! Type \' GOTO Barn \' to go there")
+        response = input()
     print("Now let's harvest it! Type \'HARVEST\' to harvest it")
     response = input()
     while response.lower().strip() != "harvest":
@@ -58,10 +71,14 @@ def tutorial():
         response = input()
     you.ownedPlots["Barn"].harvest(you)
     print("Not bad! Now let's replant the plot! Type \'PLANT wheat\' to replant!")
+    response = input()
     while response.lower().strip() != "plant wheat":
         response = input()
         print("Type \'PLANT wheat\' to replant!")
-    you.ownedPlots["Barn"].plant(cl.crop("Wheat"))
+    you.ownedPlots["Barn"].plant(you,cl.crop("Wheat"))
+    print("There are also 2 markets in town:")
+    for something in markets:
+        print(something)
     print("You've finished the tutorial! You will earn 20 gold as a reward!")
     you.balance += 20
     faq()
@@ -83,15 +100,32 @@ def main():
         elif response[0] == "GOTO":
             if response[1] in you.ownedPlots or response[1] in markets:
                 you.location = response[1]
+                if response[1] in markets:
+                    markets[response[1]].seeInventory()
         elif (response[0] == "BUY" or response[0] == "SELL") and you.location in markets:
             if response[0] == "BUY":
                 (markets[markets.index(you.location)]).buyFrom(you)
             else:
                 (markets[markets.index(you.location)]).sellTo(response[1],response[2],you)
+        elif (response[0] == "BUY" or response[0] == "SELL") and you.location not in markets:
+            print("You are not in a market! ")
+        elif response[0] == "BALANCE":
+            print(f'You have {you.balance} gold! ')
+        elif response[0] == "HELP":
+            faq()
+        elif response[0] == "PASS":
+            for i in range(response[1]):
+                checkCrops()
+        elif response[0] == "CHECK":
+            if response[1].strip().lower() == "plots":
+                ownedPlotList()
+            elif response[1].strip().lower() == "inventory" or response[1].strip().lower() == "seed":
+                print("You have:")
+                for each in you.inventory:
+                    print(f'{each}: {you.inventory[each]} crops and {you.seeds[each]} seeds')
+
+
+
         
 
-
-        
-
-faq()
-#tutorial()
+main()
