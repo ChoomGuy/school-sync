@@ -37,6 +37,7 @@ def faq():
     print("\n")
     print("PLAYER RELATED COMMANDS")
     print(f"Type GOTO \x1B[3m{'plotName'}\x1B[0m to go to a plot\nType BALANCE to see your balance\nType CHECK \x1B[3m{'seed/inventory/plots'}\x1B[0m to see your seeds/inventory/owned plots \nType PASS \x1B[3m{'hours'}\x1b[0m (optional) to pass time")
+    print("\nType QUIT to well, quit")
 
 def ownedPlotList():
     print(f'You own {len(you.ownedPlots)} plot{'s.' if len(you.ownedPlots) > 1 else '.'}')
@@ -84,15 +85,22 @@ def tutorial():
     faq()
        
 def main():
-    tutorial()
+    #tutorial()
     response = ['']
     while response[0] != "QUIT":
         response = input().split()
-        while response[0].upper() not in options:
+        while len(response) == 0:
             print('-'*30)
             print("Invalid command or command not recognised")
             print('-'*30)
             response = input().split()
+            
+        while (response[0].upper() not in options):
+            print('-'*30)
+            print("Invalid command or command not recognised")
+            print('-'*30)
+            response = input().split()
+        response[0] = response[0].upper()
         if response[0] == "HARVEST":
             you.ownedPlots[you.location].harvest(you)
         elif response[0] == "PLANT":
@@ -101,7 +109,19 @@ def main():
             if response[1] in you.ownedPlots or response[1] in markets:
                 you.location = response[1]
                 if response[1] in markets:
+                    print("--==+*+==--")
+                    print(f"Welcome to {you.location}!")
+                    print("--==+*+==--")
                     markets[response[1]].seeInventory()
+                else:
+                    print("--==+*+==--")
+                    print(f"You are now in {you.location}!")
+                    print("--==+*+==--")
+            else:
+                print("──────────⚠──────────  ")
+                print(f"Perhaps you misspelt the location? Try again")
+                print("──────────⚠──────────  ")
+                    
         elif (response[0] == "BUY" or response[0] == "SELL") and you.location in markets:
             if response[0] == "BUY":
                 (markets[markets.index(you.location)]).buyFrom(you)
@@ -114,7 +134,10 @@ def main():
         elif response[0] == "HELP":
             faq()
         elif response[0] == "PASS":
-            for i in range(response[1]):
+            if len(response) == 2:
+                for i in range(response[1]):
+                    checkCrops()
+            else:
                 checkCrops()
         elif response[0] == "CHECK":
             if response[1].strip().lower() == "plots":

@@ -58,6 +58,9 @@ class plot:
                 if player.seeds[crops.name] >= 1:
                     player.seeds[crops.name] -= 1
                     self.crops = crops.name
+                    print("-"*30)
+                    print(f"You have planted {self.crops} in this plot!")
+                    print("-"*30)
                 else:
                     print("-"*30)
                     print("You don't have enough seeds! ")
@@ -172,11 +175,10 @@ class market:
             print("You can't afford this!")
 
     def seeInventory(self):
-        output = "There are"
+        output = "There are "
         for i in self.inventory:
             output+= f'{self.inventory[i]} {i} seeds, '
-        output[-1]="."
-        print(output)
+        print(output[0:-2]+'.')
         
     
         
