@@ -3,13 +3,7 @@ import classes as cl
 you = cl.player()
 you.ownedPlots["Barn"].obstructed = False
 you.ownedPlots["Barn"].growthStage = 100
-options = ['HARVEST','PLANT','CHECK','BUY','SELL','GOTO','BALANCE','HELP','PASS']
-# 0
-# 1  has crop as a secondary param
-# 2, 5 (take plots as params)
-# 3,4 market shenanigans
-# 6 balance
-# 7 pass 
+options = ['HARVEST','PLANT','CHECK','BUY','SELL','GOTO','BALANCE','HELP','PASS','UNLOCK']
 
 
 
@@ -17,7 +11,7 @@ superMarket = cl.market("Farm-mart",20,8)
 sketchyMarket = cl.market("Discounted Goods",30,1)
 
 markets = {"supermarket": superMarket,
-"sketchyMarket": sketchyMarket}
+"sketchmart": sketchyMarket}
 
 def checkCrops():
     for each in you.ownedPlots:
@@ -36,7 +30,7 @@ def faq():
     print(f"Type HARVEST to harvest the plot you're in\nType PLANT \x1b[3m{"plantSeed"}\x1B[0m to plant in the plot you're in\nType CHECK \x1B[3m{'plotName'}\x1B[0m to check the crop in the specified plot and its growth stage")
     print("\n")
     print("PLAYER RELATED COMMANDS")
-    print(f"Type GOTO \x1B[3m{'plotName'}\x1B[0m to go to a plot\nType BALANCE to see your balance\nType CHECK \x1B[3m{'seed/inventory/plots'}\x1B[0m to see your seeds/inventory/owned plots \nType PASS \x1B[3m{'hours'}\x1b[0m (optional) to pass time")
+    print(f"Type GOTO \x1B[3m{'plotName'}\x1B[0m to go to a plot\nType BALANCE to see your balance\nType CHECK \x1B[3m{'seed/inventory/plots'}\x1B[0m to see your seeds/inventory/owned plots \nType PASS \x1B[3m{'hours'}\x1b[0m (optional) to pass time\nType UNLOCK to unlock a plot")
     print("\nType QUIT to well, quit")
 
 def ownedPlotList():
@@ -85,7 +79,7 @@ def tutorial():
     faq()
        
 def main():
-    #tutorial()
+    tutorial()
     response = ['']
     while response[0] != "QUIT":
         response = input().split()
@@ -135,20 +129,32 @@ def main():
             faq()
         elif response[0] == "PASS":
             if len(response) == 2:
-                for i in range(response[1]):
-                    checkCrops()
+                try:
+                    for i in range(int(response[1])):
+                        checkCrops()
+                except ValueError:
+                    print("──────────⚠──────────  ")
+                    print("We can't understand this!")
+                    print("──────────⚠──────────  ")
             else:
                 checkCrops()
         elif response[0] == "CHECK":
-            if response[1].strip().lower() == "plots":
-                ownedPlotList()
-            elif response[1].strip().lower() == "inventory" or response[1].strip().lower() == "seed":
-                print("You have:")
-                for each in you.inventory:
-                    print(f'{each}: {you.inventory[each]} crops and {you.seeds[each]} seeds')
+            try:
+                if response[1].strip().lower() == "plots":
+                    ownedPlotList()
+                elif response[1].strip().lower() == "inventory" or response[1].strip().lower() == "seed":
+                    print("You have:")
+                    for each in you.inventory:
+                        print(f'{each}: {you.inventory[each]} crops and {you.seeds[each]} seeds')
+            except IndexError:
+                print("──────────⚠──────────  ")
+                print("We can't understand this!")
+                print("──────────⚠──────────  ")
+
+        elif response[0] == "UNLOCK":
+            you.buyPlot()
 
 
 
         
-
 main()

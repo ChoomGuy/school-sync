@@ -105,13 +105,14 @@ class player:
         "Kale":0} 
         self.ownedPlots = {"Barn": plot(crop("Wheat"))}
 
-    def buyPlot(self,choice):
+    def buyPlot(self):
         if self.balance - 10 > 0:
             self.balance -=10
             print("You bought a plot!")           
             print("Give the plot a name! \n")
             name = input()
             self.ownedPlots[name] = plot(crop("None"))
+            self.ownedPlots[name].obstructed = False
             
         else:
             print("You're too broke! ")
@@ -127,12 +128,19 @@ class crop:
     def rotDevelopment(self):
         if random.randint(1,20) == random.randint(1,20): # 5%
             self.rot += 10
+            return 10
         elif abs(random.randint(1,20)-random.randint(1,20)) == 1: # 9.5%
             self.rot += 1
+            return 1
+        return 0
+        
 
     def growthCheck(self):
         if random.randint(1,len(self.name)) == random.randint(1,len(self.name)):
-            self.growthStage += random.randint(1,2)
+            growthAmount = random.randint(1,2)
+            self.growthStage += growthAmount
+            return growthAmount
+        return 0
 
 
 class market:
@@ -178,7 +186,7 @@ class market:
         output = "There are "
         for i in self.inventory:
             output+= f'{self.inventory[i]} {i} seeds, '
-        print(output[0:-2]+'.')
+        print(output[0:-2]+' for sale.')
         
     
         
