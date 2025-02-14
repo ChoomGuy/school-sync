@@ -106,7 +106,7 @@ class player:
         self.ownedPlots = {"Barn": plot(crop("Wheat"))}
 
     def buyPlot(self):
-        if self.balance - 10 > 0:
+        if self.balance - 10 >= 0:
             self.balance -=10
             print("You bought a plot!")           
             print("Give the plot a name! \n")

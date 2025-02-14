@@ -13,6 +13,16 @@ sketchyMarket = cl.market("Discounted Goods",30,1)
 markets = {"supermarket": superMarket,
 "sketchmart": sketchyMarket}
 
+def fixParsing(a: list):
+    if len(a) == 1:
+        return a
+    else:
+        for i in range(2,len(a)-1):
+            a[1]+= " "
+            a[1] += a[i]
+    return a
+
+
 def checkCrops():
     for each in you.ownedPlots:
         for i in range(20):
@@ -95,6 +105,7 @@ def main():
             print('-'*30)
             response = input().split()
         response[0] = response[0].upper()
+        response = fixParsing(response)
         if response[0] == "HARVEST":
             you.ownedPlots[you.location].harvest(you)
         elif response[0] == "PLANT":
