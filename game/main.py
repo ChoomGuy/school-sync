@@ -118,9 +118,9 @@ def main():
                     
         elif (response[0] == "BUY" or response[0] == "SELL") and you.location in markets:
             if response[0] == "BUY":
-                (markets[markets.index(you.location)]).buyFrom(you)
+                (markets[you.location]).buyFrom(you)
             else:
-                (markets[markets.index(you.location)]).sellTo(response[1],response[2],you)
+                (markets[you.location]).sellTo(response[1],response[2],you)
         elif (response[0] == "BUY" or response[0] == "SELL") and you.location not in markets:
             print("You are not in a market! ")
         elif response[0] == "BALANCE":

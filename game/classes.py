@@ -71,10 +71,10 @@ class plot:
                 print("-"*30)
 
     def cropGrowth(self):
-        self.growthStage += self.crop.growthCheck()
+        self.growthStage = crop.growthStage
 
     def cropRot(self):
-        self.rotStage += self.crop.rotDevelopment()
+        self.rotStage = crop.rot 
 
     def checkCropType(self):
         return self.cropName
@@ -128,19 +128,16 @@ class crop:
     def rotDevelopment(self):
         if random.randint(1,20) == random.randint(1,20): # 5%
             self.rot += 10
-            return 10
         elif abs(random.randint(1,20)-random.randint(1,20)) == 1: # 9.5%
             self.rot += 1
-            return 1
-        return 0
+            
         
 
     def growthCheck(self):
         if random.randint(1,len(self.name)) == random.randint(1,len(self.name)):
             growthAmount = random.randint(1,2)
             self.growthStage += growthAmount
-            return growthAmount
-        return 0
+            
 
 
 class market:
