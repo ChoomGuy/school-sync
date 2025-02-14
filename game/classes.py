@@ -113,6 +113,7 @@ class player:
             name = input()
             self.ownedPlots[name] = plot(crop("None"))
             self.ownedPlots[name].obstructed = False
+            print(f"The plot {name} has been unlocked!")
             
         else:
             print("You're too broke! ")
