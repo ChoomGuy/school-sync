@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1740398108.56381 "/home/albiflora/Documents/GitHub/school-sync/Aby guide/main.tex" "main.pdf" "main" 1740398109.14099 0
-  "/home/albiflora/Documents/GitHub/school-sync/Aby guide/main.tex" 1740398108.37724 293 ee23c811bf2f7927323e4240e48f9221 ""
+["pdflatex"] 1740517982.41315 "/home/albiflora/Documents/GitHub/school-sync/Aby guide/main.tex" "main.pdf" "main" 1740517982.89819 0
+  "/home/albiflora/Documents/GitHub/school-sync/Aby guide/main.tex" 1740517981.64674 1976 12b208b52cd2c8a47131d5d8ba568edd ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1736268207 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1736268207 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1736268207 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -25,9 +25,15 @@
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1736268207 1120 8b7d695260f3cff42e636090a8002094 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1736268207 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1736268207 32080 340ef9bf63678554ee606688e7b5339d ""
+  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1736268207 30251 6afa5cb1d0204815a708a080681d4674 ""
+  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1736268207 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
+  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1736268207 36281 c355509802a035cadc5f15869451dcee ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1736268207 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1736268207 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1736268207 32362 179c33bbf43f19adbb3825bb4e36e57a ""
+  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1736268207 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
+  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1736268207 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1736268207 32716 08e384dc442464e7285e891af9f45947 ""
   "/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1736268207 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex" 1736268207 1016 1c2b89187d12a2768764b83b4945667c ""
   "/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex" 1736268207 43820 1fef971b75380574ab35a0d37fd92608 ""
@@ -161,9 +167,9 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1736268207 41588 b43d3e860a4f94167ee1e725ff526a72 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1740079242.05164 5318467 8236939515598d005dfbcc2e1a40f206 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1740079176 7112999 d8f1bf0d747202d2ffb5048314797098 ""
-  "main.aux" 1740398109.02724 422 f1f333a823dff36a4fd9823ee0ac2257 "pdflatex"
-  "main.tex" 1740398108.37724 293 ee23c811bf2f7927323e4240e48f9221 ""
-  "main.toc" 1740398109.02724 226 88ffb91bc8a13a72ff0c9984750fae92 "pdflatex"
+  "main.aux" 1740517982.84006 574 98c3cf46bd9ed16aacb91cbcc6dd5b12 "pdflatex"
+  "main.tex" 1740517981.64674 1976 12b208b52cd2c8a47131d5d8ba568edd ""
+  "main.toc" 1740517982.84006 226 8a261a41bd165984463580f6860b9f9d "pdflatex"
   (generated)
   "main.aux"
   "main.log"
