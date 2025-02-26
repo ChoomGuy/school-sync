@@ -11,6 +11,7 @@
 \tableofcontents
 \newpage
 \section{SUVAT}
+\subsection{Introduction to SUVAT and equations}
 {SUVAT refers to an acronym which involves all the variables required to solve a kinematic equation, where acceleration is constant. It stands for}
 \begin{itemize}
 \item[-S] displacement
@@ -40,15 +41,36 @@
 \label{useless}
     s=vt-\frac{1}{2}at^2
 \end{equation}
-{We derive \ref{simple} from the definition of acceleration ($\frac{v-u}{t}=a$). \ref{avg} is from the definition of average speed ($\frac{\text{Total displacement}}{\text{time}}=\text{average speed}$). \ref{gt} is derived by substituting \ref{simple} into \ref{avg}, similarly, rearranging and substituting $t$ from \ref{avg} into \ref{simple} gets \ref{DOTS}. Unfortunately \ref{useless} is used once every infinite years and if you recall from limits, \[\lim_{x\to\infty} \frac{1}{x} = 0\].}
+{We derive \ref{simple} from the definition of acceleration ($\frac{v-u}{t}=a$). \ref{avg} is from the definition of average speed ($\frac{\text{Total displacement}}{\text{time}}=\text{average speed}$). \ref{gt} is derived by substituting \ref{simple} into \ref{avg}, similarly, rearranging and substituting $t$ from \ref{avg} into \ref{simple} gets \ref{DOTS}. Unfortunately \ref{useless} is used once every infinite years and if you recall from limits, \[\lim_{x\to\infty} \frac{1}{x} = 0\]}
+{Sometimes, the question will not be explicit with what values each of the variables will take; thus, the context to the question needs to be interpreted. For example, if the question says that a particle accelerates to $4ms^{-1}$ from rest, then we can say that $u=0$, and $v=4$. Furthermore, if it says that a particle is falling from 50 meters until it hits the ground, we can say that $a=-g$. The converse implies that $a=+g$.}
 \newpage
 \subsection{Graphs}
 {To understand these graphs, it is vital to understand the difference between velocity and speed, and displacement and distance. The former of the 2 are vectors, so the direction is important and also that means it can be negative, whereas the latter are the scalar versions, so they can only be positive.}
 {The first graph is a velocity-time graph}
-\begin{figure}[h] % INSERT GRAPH
+\begin{center}
     
+
+\begin{figure}[h]
+\begin{tikzpicture}
+    \begin{axis}[
+        axis lines=middle,
+        xlabel={Time},
+        ylabel={Velocity},
+        samples=100,
+        domain=0:10]
+    % Define piecewise function
+    \addplot[domain=0:4, thick] {(3*x)/4};
+    \addplot[domain=4:6, thick] {3};
+    \addplot[domain=6:7, thick] {3*x-15};
+    \addplot[domain=7:10, thick] {-2*x+20};
+
+    \end{axis}
+\end{tikzpicture}
 \end{figure}
-\subsection{Equations}
+\end{center}
+{The gradient of the graph is the acceleration of the particle, as acceleration is given by $\frac{dv}{dt}$. From $t=4$ to $t=6$, we can see that $\frac{dv}{dt}$ is 0, however this does not mean the particle is stationary. It just so happens that if $\frac{dv}{dt}$ is equal to 0, then $v$ is equal to a constant, and stationary is a special case, where said constant is 0. \\ The area underneath the lines is $v\cdot t$, which is displacement (not distance as to get a vector, the formula must involve another vector, and time is scalar). Thus, if we say that velocity is a function of time, we can give $s$ by a formula \[s=\int v(t) dt\]However, because $v(t)$ is often a piecewise function (ie. has a different function at certain values), it is easier to use trapezium rule (or the Tai's method if you will) to get an approximation for the displacement, however, for the exact displacement, given that \[v(t)=\begin{cases}v_{1}(t) & 0\leq x \leq a \\v_{2}(t) & a\leq x\leq b \\v_3(t) & b\leq x \leq c \\ \vdots \end{cases}\]then \[s=\sum_{i}^{n} \int^{b}_{a} v_i(t) dt\] The reason that trapezium rule is only an estimate for area is because the graph shown above was not accurate in the slightest. In real life, acceleration is not uniform, or rather is rarely uniform. Furthermore, the sudden changes from one line to another implies that acceleration was suddenly changed, which aren't realistic. \\}
+{The other graph is the position-time graph or the displacement-time graph. The only reason that }
+% DO NOT MENTION A-T GRAPHS
 \section{Calculus}
 
 \end{document}

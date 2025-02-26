@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1740517982.41315 "/home/albiflora/Documents/GitHub/school-sync/Aby guide/main.tex" "main.pdf" "main" 1740517982.89819 0
-  "/home/albiflora/Documents/GitHub/school-sync/Aby guide/main.tex" 1740517981.64674 1976 12b208b52cd2c8a47131d5d8ba568edd ""
+["pdflatex"] 1740603394.87924 "/home/albiflora/Documents/GitHub/school-sync/Aby guide/main.tex" "main.pdf" "main" 1740603395.57125 0
+  "/home/albiflora/Documents/GitHub/school-sync/Aby guide/main.tex" 1740603394.66688 4387 4e988e2f74ad91a3b93c4912e7d95310 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1736268207 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1736268207 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1736268207 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -167,9 +167,9 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1736268207 41588 b43d3e860a4f94167ee1e725ff526a72 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1740079242.05164 5318467 8236939515598d005dfbcc2e1a40f206 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1740079176 7112999 d8f1bf0d747202d2ffb5048314797098 ""
-  "main.aux" 1740517982.84006 574 98c3cf46bd9ed16aacb91cbcc6dd5b12 "pdflatex"
-  "main.tex" 1740517981.64674 1976 12b208b52cd2c8a47131d5d8ba568edd ""
-  "main.toc" 1740517982.84006 226 8a261a41bd165984463580f6860b9f9d "pdflatex"
+  "main.aux" 1740603395.48356 600 2939d1d66760770381d7a28dbf272dc2 "pdflatex"
+  "main.tex" 1740603394.66688 4387 4e988e2f74ad91a3b93c4912e7d95310 ""
+  "main.toc" 1740603395.48356 252 8f3a4cc562b364391a05dd7301e5248f "pdflatex"
   (generated)
   "main.aux"
   "main.log"
