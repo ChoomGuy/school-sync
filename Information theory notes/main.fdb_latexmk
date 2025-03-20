@@ -1,9 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1742385290.88933 "/home/albiflora/Documents/GitHub/school-sync/Information theory notes/main.tex" "main.pdf" "main" 1742385291.12821 0
-  "/home/albiflora/Documents/GitHub/school-sync/Information theory notes/main.tex" 1742385290.76929 3827 c18518d9565a817b293114c63f786cd1 ""
-  "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1736268207 2900 1537cc8184ad1792082cd229ecc269f4 ""
+["pdflatex"] 1742474710.9837 "/home/albiflora/Documents/GitHub/school-sync/Information theory notes/main.tex" "main.pdf" "main" 1742474711.22697 0
+  "/home/albiflora/Documents/GitHub/school-sync/Information theory notes/main.tex" 1742474710.874 4178 82df2677f9e5eec509203b4128683470 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1736268207 3524 cb3e574dea2d1052e39280babc910dc8 ""
-  "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1736268207 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1736268207 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1736268207 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1736268207 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -39,7 +37,6 @@
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1736268207 32716 08e384dc442464e7285e891af9f45947 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1736268207 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1736268207 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
-  "/usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb" 1736268207 138258 6525c253f16cededa14c7fd0da7f67b2 ""
   "/usr/share/texmf-dist/tex/latex/amscls/amsthm.sty" 1736268207 12594 0d51ac3a545aaaa555021326ff22a6cc ""
   "/usr/share/texmf-dist/tex/latex/amsfonts/amsfonts.sty" 1736268207 5949 3f3fd50a8cc94c3d4cbf4fc66cd3df1c ""
   "/usr/share/texmf-dist/tex/latex/amsfonts/amssymb.sty" 1736268207 13829 94730e64147574077f8ecfea9bb69af4 ""
@@ -56,8 +53,8 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1736268207 41588 b43d3e860a4f94167ee1e725ff526a72 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1740922993.48219 5318467 8236939515598d005dfbcc2e1a40f206 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1740922926 7113014 65dd6bffc47f1aba999848cdfc74393c ""
-  "main.aux" 1742385291.09358 325 9541507cad2b67276e20902efdfbf8cb "pdflatex"
-  "main.tex" 1742385290.76929 3827 c18518d9565a817b293114c63f786cd1 ""
+  "main.aux" 1742474711.19211 221 73d76cc5a11ea7a0da48edf853e988b6 "pdflatex"
+  "main.tex" 1742474710.874 4178 82df2677f9e5eec509203b4128683470 ""
   (generated)
   "main.aux"
   "main.log"
