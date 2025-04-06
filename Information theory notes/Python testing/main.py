@@ -27,6 +27,7 @@ for i in letters:
     print(f'{i:5} | {letters[i]*100/total:3.3f}%')
 
 print(f'{entropy(px)=}') # shows that high % letters (ie. a, e) are more likely as it is slightly less than log2(26)
+filteredWordList = dict(filter(filterFunction,wordValue.items()))
 
 wordValue = {word:score for (word,score) in zip(actual, [0 for i in range(len(actual))])}
 for each in wordValue:
@@ -46,7 +47,6 @@ def filterFunction(pair):
         return False
     return True
 
-filteredWordList = dict(filter(filterFunction,wordValue.items()))
 
 
 letter2 = letters.copy()
